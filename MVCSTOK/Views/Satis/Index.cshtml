@@ -1,0 +1,55 @@
+﻿@model MVCSTOK.Models.EntityFramework.TBLSATISLAR
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_MainLayout.cshtml";
+    }
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1"> Satış Yap </button>
+
+    <div class="modal" id="modal1" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Yeni Satış</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" action="/Satis/YeniSatis">
+                    <div class="modal-body">
+                        <label>
+                            Ürün Adı
+
+                        </label>
+                        @Html.TextBoxFor(m => m.URUN, new { @class = "form-control" })
+                        <br />
+                        <label>
+                            Müşteri Adı Soyadı
+
+                        </label>
+
+                        @Html.TextBoxFor(m => m.MUSTERI, new { @class = "form-control" })
+                        <label>
+                            Adet
+
+                        </label>
+                        @Html.TextBoxFor(m => m.Adet, new { @class = "form-control" })
+                        <label>
+                            Fiyat
+
+                        </label>
+                        @Html.TextBoxFor(m => m.Fiyat, new { @class = "form-control" })
+                    </div>
+
+
+
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Satış işlemini yap</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

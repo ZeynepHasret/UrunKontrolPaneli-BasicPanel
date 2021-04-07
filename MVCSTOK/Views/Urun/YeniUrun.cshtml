@@ -1,0 +1,39 @@
+﻿@using MVCSTOK.Models.EntityFramework
+@model URUNLER
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Ürün Adı</label>
+        <input class="form-control" name="URUNADI" required="" maxlength="30" />
+    </div>
+    <div>
+        <label>MARKA</label>
+        <input class="form-control" name="MARKA" placeholder="Buraya markayı yazınız." required="" />
+    </div>
+    <div>
+        <label>Kategori seçiniz</label>
+        @Html.DropDownListFor(m=>m.TBLKATEGORILER.KATEGORIID ,(List<SelectListItem>)ViewBag.dgr, new { @class="form-control"})
+        @*<select class="form-control" name="URUNKATEGORI">
+            @foreach (var item in Model)
+            {
+
+                <option class="form-control" value="@item.KATEGORIID">@item.KATEGORIADI</option>
+
+            }
+        </select>*@
+        </div>
+    <div>
+        <label>Fiyat</label>
+        <input class="form-control" name="FIYAT" />
+    </div>
+    <div>
+        <label>Stok</label>
+        <input class="form-control" name="STOK" />
+    </div>
+    <button style="margin-top:10px; " class="btn btn-info">EKLE</button>
+</form>
+

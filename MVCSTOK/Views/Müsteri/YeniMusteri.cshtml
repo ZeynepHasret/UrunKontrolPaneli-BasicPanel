@@ -1,0 +1,30 @@
+﻿@model MVCSTOK.Models.EntityFramework.TBLMUSTERILER
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>YeniKategori</h2>
+
+<form class="form-group" method="post">
+    <div>
+        @Html.LabelFor(m => m.MUSTERIADI)
+        @Html.TextBoxFor(m => m.MUSTERIADI, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MUSTERIADI, "", new { @style = "color:red" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.MUSTERISOYAD)
+        @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MUSTERISOYAD, "", new { @style = "color:red" })
+    </div>  
+    <div style="margin-top:15px;">
+        <button class="btn btn-info" id="btn"> EKLE</button>
+    </div>
+    <script>
+        $('#btn').click(function () {
+            alert('Müşteri eklendi !');
+        }
+            )
+    </script>
+
+</form>
